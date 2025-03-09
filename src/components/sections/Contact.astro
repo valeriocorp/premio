@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import { AnimatedButton } from "../shared/AnimatedButton";
+
+
+---
+
+<section id="contact">
+    <div class="my-20 min-h-96 w-screen px-10">
+        <div class="relative rounded-lg bg-black py-24 text-blue-50 sm:overflow-hidden">
+            <div class="absolute -left-20 top-0 hidden h-full w-72 overflow-hidden sm:block lg:left-20 lg:w-96">
+                <div class="contact-clip-path-1">
+                    <Image src="https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117287/premio/img/cuhq1w6nrzb8wyxn0nti.webp" alt="Contact 1" width={1000} height={1000} class="object-cover"/>
+                </div>
+                <div class="contact-clip-path-2 lg:translate-y-40 translate-y-60">
+                    <Image src="https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117284/premio/img/ykihmobyk7k3rntiojfu.webp" alt="Contact 2" width={1000} height={1000} class="object-cover"/>
+                </div>
+
+            </div>
+
+            <div class="absolute -top-40 left-20 w-60 sm:top-1/2 md:left-auto md:right-10 lg:top-20 lg:w-80">
+                <div class="absolute md:scale-125">
+                    <Image src="https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117292/premio/img/cfwr0gzjavfp5ju6nbyh.webp" alt="Contact 3" width={1000} height={1000} class="object-cover"/>
+                </div>
+                <div class="sword-man-clip-path md:scale-125">
+                    <Image src="https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117312/premio/img/iz38pnkpozsnysq7ug7h.webp" alt="Contact 3" width={1000} height={1000} class="object-cover"/>
+                </div>
+            </div>
+            <div class="flex flex-col items-center text-center">
+                <p class="font-general text-[10px] uppercase">
+                    Unete a la comunidad de <span class="text-blue-500">LoopOut</span>
+                </p>
+                <p class="special-font mt-10 w-full text-5xl leading-[0.9] md:text-[6rem]">
+                    Contruyamos juntos <br/> nueva era de las webs <br/> en latin america
+                </p>
+
+                <AnimatedButton title="Contactanos" className="mt-10" />
+            </div>
+        </div>
+    </div>
+</section>

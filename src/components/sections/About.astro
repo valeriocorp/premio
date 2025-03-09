@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import { AnimatedTitle } from "@/components/shared/AnimatedTitle";
+
+---
+
+<section id="about">
+    <div data-about-frame class="min-h-screen w-screen">
+        <div class="relative mb-8 mt-36 flex flex-col items-center gap-5">
+
+            <h2 class="font-general text-sm uppercase md:text-[10px]">
+                Bienvenido a LoopOut
+            </h2>
+            <AnimatedTitle title=`Rafa esta loco` className="mt-5 !text-blue-500 text-center" client:visible/>
+            <div class="about-subtext">
+                <p>
+                    LoopOut es una plataforma de desarrollo web 3D, apps y videojuegos.
+                </p>
+                <p>
+                    Nuestro objetivo es crear experiencias inolvidables y únicas.
+                </p>
+            </div>
+        </div>
+        <div class="h-dvh w-screen" data-clip>
+            <div class="about-image" data-mask-clip-path>
+                <Image src={"https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117315/premio/img/pyf5smy2irqsr0kntyst.webp"} alt="Background" width={1000} height={1000} class={"absolute left-0 top-0 size-full object-cover"} loading="eager"/>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const aboutFrame = document.querySelector("[data-about-frame]");
+    const clipData = document.querySelector("[data-clip]");
+    const maskClipPath = document.querySelector("[data-mask-clip-path]");
+
+    if (clipData && aboutFrame && maskClipPath) {
+        const clipAnimation = gsap.timeline({
+            scrollTrigger: {
+                trigger: clipData,
+                start: "center center",
+                end: "+=800 center",
+                scrub: 0.5,
+                pin: true,
+                pinSpacing: true,
+            }
+        })
+        
+        clipAnimation.to(maskClipPath, {
+            width: "100vw",
+            height: "100vh",
+            borderRadius: "0",
+        })
+        
+    }
+
+
+
+</script>

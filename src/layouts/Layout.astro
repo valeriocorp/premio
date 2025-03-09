@@ -1,3 +1,8 @@
+---
+import '../styles/global.css';
+import { Navbar } from '@/components/shared/Navbar';
+import { Image } from "astro:assets";
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +10,15 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Premio</title>
 	</head>
 	<body>
-		<slot />
+		<main class="relative min-h-screen w-screen overflow-x-hidden">
+			<Navbar client:load>
+				<Image src="https://res.cloudinary.com/dinqyrkvx/image/upload/v1741117297/premio/img/aweh2at7vk8f8c3kkaik.png" alt="Premio" width={100} height={100} class={"w-10"}/>
+			</Navbar>
+			<slot />
+
+		</main>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
