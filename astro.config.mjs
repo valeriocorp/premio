@@ -11,7 +11,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   integrations: [react()],
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({
+    imageCDN: false,
+  }),
 
   vite: {
     plugins: [tailwindcss()]
